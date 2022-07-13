@@ -1,20 +1,31 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardView extends StatelessWidget {
-  const CardView({Key? key, required this.cardTitle, required this.cardSubtitle}) : super(key: key);
+  const CardView({Key? key, required this.cardImage}) : super(key: key);
 
-  final String cardTitle;
-  final String cardSubtitle;
+  final String cardImage;
   
   @override
   Widget build(BuildContext context) {
-      return Expanded(
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 23.0, vertical: 23.0),
         child: Container(
-          color: Colors.deepOrange,
-          child: Text(
-            'Test'
+          height: 400,
+          width: 300,
+          child: Stack(
+            children: [
+              ClipRRect(
+								borderRadius: BorderRadius.all(Radius.circular(12.0)),
+								child: Image.network(
+									cardImage,
+								),
+							),
+              
+							// Text for the picture
+            ],
           ),
         ),
       );
-  }
+  } 
 }

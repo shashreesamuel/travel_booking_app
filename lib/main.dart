@@ -82,18 +82,45 @@ class Home extends StatelessWidget {
             padding: const EdgeInsets.only(left: 23.0),
             child: Text('Featured', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ),
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      CardView(
+                        cardImage: 'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
+                      ),
+                      CardView(
+                                                cardImage:
+                            'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
+
+                      ),
+                      CardView(
+                                                cardImage:
+                            'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
+
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
         ],
       ),
       
+      
 
-      //TODO Listview for the destination cards
-
+      //? Listview for the destination cards
+      
 
       bottomNavigationBar: BottomNavigationBar(items: [
         BottomNavigationBarItem(
             icon: Icon(Icons.home),
             backgroundColor: Colors.grey[900],
-            label: ''),
+            label: ''
+        ),
         BottomNavigationBarItem(icon: Icon(Icons.navigation), label: ''),
         BottomNavigationBarItem(icon: Icon(Icons.bookmark), label: ''),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
