@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardView extends StatelessWidget {
@@ -8,14 +7,20 @@ class CardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-        child: Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: Image.network(
-            cardImage,
-            height: 340,
-          ),
-        ));
+    return SizedBox(
+      height: 200,
+      child: Expanded(
+        child: ListView.builder(
+          itemCount: 3, 
+          itemBuilder: (BuildContext context, int index) {  
+            return Column(children: [
+              Image.network(cardImage)
+            ],
+            );
+          },
+      
+        ),
+      ),
+    );
   }
 }
